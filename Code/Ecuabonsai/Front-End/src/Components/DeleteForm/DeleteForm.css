@@ -1,0 +1,12 @@
+.blur{
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    background-color: rgba(243, 236, 220, 0.5) !important;
+}
+
+.btn-red{
+    background-color: #880201;
+    color: white;
+}
+
