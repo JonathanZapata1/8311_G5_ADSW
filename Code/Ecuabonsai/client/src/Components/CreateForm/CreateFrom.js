@@ -34,7 +34,7 @@ export function CreateForm() {
       <center>
         <div
           className="card text-white bg-secondary border-primary center"
-          style={{ width: "18rem" }}
+          style={{ width: "20rem",  height:"30rem"}}
         >
           <div className="rendered-form">
             <div className="formbuilder-select form-group field-select-1661658959184">
@@ -72,6 +72,23 @@ export function CreateForm() {
                 id="file-1661659003480"
               />
             </div>
+
+            <div className="formbuilder-button form-group field-button-1661661233333">
+            <label
+                htmlFor="select-1661659027080"
+                className="formbuilder-select-label"
+              >
+                Descripcion del producto 
+              </label>
+              <div className="formbuilder-select form-group field-select-1661658959184">
+              <input type="text" >
+
+              </input>
+              </div>
+            
+            </div>
+
+
             <div className="formbuilder-select form-group field-select-1661659027080">
               <label
                 htmlFor="select-1661659027080"
@@ -87,6 +104,10 @@ export function CreateForm() {
                 {promos}
               </select>
             </div>
+            
+         
+            
+
             <div className="formbuilder-button form-group field-button-1661661233333">
               <button
                 type="button"

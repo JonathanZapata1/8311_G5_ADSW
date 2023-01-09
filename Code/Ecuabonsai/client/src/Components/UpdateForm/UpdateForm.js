@@ -12,6 +12,14 @@ export const getProductos = async () => {
   }
 };
 
+export const getPromocion = async () => {
+  try {
+    const response = await axios.get(`http://localhost:5000/promotion`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export function UpdateForm() {
   const [data, setData] = useState([
@@ -19,19 +27,21 @@ export function UpdateForm() {
       id: "",
       producto: "",
       descripcion: "",
-      foto: Image,
+      foto: "",
       promocion: "",
     },
   ]);
+  
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [bonsaiSeleccionado, setBonsaiSeleccionado] = useState({
     id: "",
     producto: "",
     descripcion: "",
-    foto: Image,
+    foto: "",
     promocion: "",
   });
+
   const seleccionarBonsai = (elemento, caso) => {
     setBonsaiSeleccionado(elemento);
     caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
@@ -55,10 +65,7 @@ export function UpdateForm() {
     });
     setCatalogos(catalogos);
     setModalEditar(false);
-    axios.put('http://localhost:5000/producto',
-    {
-      
-    })
+    axios.put("http://localhost:5000/producto", {});
   };
 
   const [catalogos, setCatalogos] = useState([]);
@@ -94,7 +101,9 @@ export function UpdateForm() {
                 <td>{elemento._id}</td>
                 <td>{elemento.especie}</td>
                 <td>{elemento.descripcion}</td>
-                <td>{elemento.foto}</td>
+                <td>
+                  <img className="imagenArbol" src={elemento.foto} />
+                </td>
                 <td>{elemento.promocion}</td>
                 <td>
                   <button
@@ -155,29 +164,25 @@ export function UpdateForm() {
               onChange={handleChange}
             />
             <input
-                className="form-control"
-                type="file"
-                name="foto"
-                access="false"
-                multiple="false"
-                id="file-1661659003480"
-                value={bonsaiSeleccionado && bonsaiSeleccionado.foto}
+              className="form-control"
+              type="file"
+              name="foto"
+              access="false"
+              multiple="false"
+              id="file-1661659003480"
+              value={bonsaiSeleccionado && bonsaiSeleccionado.foto}
               onChange={handleChange}
-              />
+            />
             <br />
             <label>Promocion</label>
             <select
-               className="form-control"
-               type="text"
-               name="promocion"
-               value={bonsaiSeleccionado && bonsaiSeleccionado.promocion}
-               onChange={handleChange}
+              className="form-control"
+              type="text"
+              name="promocion"
+              value={bonsaiSeleccionado && bonsaiSeleccionado.promocion}
+              onChange={handleChange}
             >
-              <option
-                value="10%"
-                selected="true"
-                id="select-1661659027080-0"
-              >
+              <option value="10%" selected="true" id="select-1661659027080-0">
                 10%
               </option>
               <option value="25%" id="select-1661659027080-1">
@@ -187,7 +192,7 @@ export function UpdateForm() {
                 50%
               </option>
             </select>
-           
+
             <br />
           </div>
         </ModalBody>
@@ -203,7 +208,6 @@ export function UpdateForm() {
           </button>
         </ModalFooter>
       </Modal>
-
     </div>
   );
 }
