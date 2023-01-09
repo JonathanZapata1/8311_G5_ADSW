@@ -9,6 +9,7 @@ const cors = require('cors');
 const catalogoRoutes = require('./routes/catalogoRoutes');
 const productRoutes = require('./routes/productRoutes');
 const promotionRoutes = require('./routes/promotionRoutes');
+const repositorioRoutes = require('./routes/repositorioRoutes');
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
@@ -42,6 +43,7 @@ app.use(cors());
 app.use('/', catalogoRoutes());
 app.use('/', productRoutes());
 app.use('/', promotionRoutes());
+app.use('/',repositorioRoutes());
 app.use('/', userRoutes());
 app.use(express.static('uploads'));
 

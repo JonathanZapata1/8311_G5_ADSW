@@ -1,6 +1,6 @@
-import "./Navbar.css";
-import Logo from '../../Assets/logo.jpg'
-export function Navbar() {
+import "../Navbar/Navbar.css";
+import Logo from "../../Assets/logo.jpg";
+export function NavbarUser() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-cream">
@@ -19,28 +19,28 @@ export function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link text-black" href="/create">
-                  Crear
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-black" href="/update">
-                  Actualizar
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-black" href="#">
-                  Consultar
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-black" href="/delete">
-                  Eliminar
-                </a>
-              </li>
-              <li className="nav-item">
                 <a className="nav-link text-black" href="/user/inicio">
-                  User view
+                  Inicio
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-black" href="/user/catalogo">
+                  Catálogo
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-black" href="/user/mantenimiento_y_servicio">
+                  Mantenimiento y Servicio
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-black" href="/user/contacto">
+                  Contacto
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link text-black" href="/user/micuenta">
+                  Mi cuenta
                 </a>
               </li>
             </ul>
@@ -52,7 +52,7 @@ export function Navbar() {
               height={70}
               width={100}
               alt="MDB Logo"
-              loading="lazy"  
+              loading="lazy"
             />
           </div>
         </div>
