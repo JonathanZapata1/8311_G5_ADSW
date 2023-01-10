@@ -1,12 +1,73 @@
-.Carrusel{
-    width: 500px;
-    height: 500px;
+.text-left{
+    width: auto;
+    height: 600px;
 }
+
 .inicio{
     text-align: center;
-    background-color: ;
+    background-image:url("../../Assets/images.jpeg");
+    color: rgb(0, 0, 0);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.94;
+    font-family: 'inherit';
 }
 .inicioimg{
+    width: 100px;
+    height: 100px;
+}
+
+.portada{
     width: 500px;
     height: 400px;
+  position:relative;
+
 }
+.eslogan{
+   padding-top:50px;
+}
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    position: relative;
+    top: 100px;
+  }
+
+/*Footer*/
+.footer1{
+    background:#f3ecdc;
+    padding: 30px;
+  }
+  
+  .footer-p{
+    text-align: center;
+    color: rgba(0,0,0,.5);
+    font-size:1rem;
+    font-weight: bold;
+  }
+  .twitter a:hover{
+    color: #2666CF;
+  }
+  .youtube a:hover{
+    color: rgb(165, 42, 134);
+  }
+  .github a:hover{
+    color: rgb(25, 2, 36);
+  }
+  .socialmedia a{
+    color:  rgba(0,0,0,.5);
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  .main{
+    width: 100%;
+    height: 100%;
+  }
+
+  
+
+  /*fin*/

@@ -1,14 +1,33 @@
 import { NavbarUser } from "../../Components/UserForm/NavbarUser";
+import { Footer } from "../../Components/UserForm/Footer";
+import Portada from '../../Assets/fondobonsai1.jpg'
 import "./user.css";
 export function Inicio() {
   return (
     <div>
       <NavbarUser />
       <div className="inicio">
-        <h1>Ecuabonsai</h1>
-        <h1>El arte del Bonsai cerca de ti</h1>
-        <img className="inicioimg" src="https://scontent.fuio10-1.fna.fbcdn.net/v/t39.30808-6/306902236_5750411694980991_4678951055789468915_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_eui2=AeF1XoGenLYDyDa7E_BEBafpgsaEb0ETVzOCxoRvQRNXM4cOq0vjMn0rgziNz0LcIh7XAHVm1-j7w6NYLZzXe5kY&_nc_ohc=n3I-FECMrPAAX8d9zS8&tn=V_ey3XNaayuhpdlL&_nc_ht=scontent.fuio10-1.fna&oh=00_AfC-EuQgdskVkZt_BAfSKdMTePMBSx55Zeg-cUu_3o0Dhg&oe=63C0D7E4" alt="inicio"/>
+        <div className="text-left">
+          <table className="eslogan">
+          <tr>
+          <td>
+            <h3>Bonsáis en Quito</h3>
+            <h1>El arte del Bonsái cerca de ti cerca de ti</h1>
+            <p>
+              Contamos con una amplia variedad en especies,tamaños y edades, En
+              Ecuabonsai, nos especializamos en ayudarte a conseguir el que
+              arbol que armonizará sus espacios
+            </p>
+            </td>
+            <td>
+              <img className="portada" src={Portada} alt="iniciofoto"></img>
+            </td>
+            </tr>
+            
+          </table>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
