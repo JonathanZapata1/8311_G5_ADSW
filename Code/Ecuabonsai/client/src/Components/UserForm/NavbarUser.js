@@ -35,7 +35,7 @@ export function NavbarUser() {
               </li>
               <li className="nav-item">
                 <a className="nav-link text-black" href="/user/contacto">
-                  Contacto
+                  Conócenos
                 </a>
               </li>
               <li className="nav-item">

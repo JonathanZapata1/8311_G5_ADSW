@@ -10,7 +10,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.94;
-    font-family: 'inherit';
+  
 }
 .inicioimg{
     width: 100px;
@@ -88,13 +88,20 @@ table {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7)
     ,rgba(4,9,30,0.7));
     color: aliceblue;
-
+    padding-bottom: 20px;
+    
+  }
+  .form2 img{
+  
+      width: 400px;
+      height: 350px;
+  
   }
 
   .localizacion,.principio{
       width: 80%;
       margin:auto;
-      padding: 80px 0;
+      padding: 40px 0;
   }
  .localizacion iframe{
      width: 100%;
@@ -112,9 +119,10 @@ table {
 }
 .menu h1{
   width: 80%;
-   text-align: center;
-   padding-top: 100px ;
-   font-size: 60px;
+   text-align: left;
+   padding-top: 80px ;
+   padding-bottom: 80px;
+   font-size: 30px;
    color: aliceblue;
 }
 .foto{
@@ -138,6 +146,6 @@ table {
     display: flex;
     justify-content: space-between;
 }
-  
+ 
 
   /*fin*/

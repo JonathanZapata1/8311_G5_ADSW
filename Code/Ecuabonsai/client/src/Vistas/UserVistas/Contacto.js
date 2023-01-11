@@ -6,10 +6,10 @@ import Foto2 from '../../Assets/bonsai2.png'
 import Foto3 from '../../Assets/bonsai3.png'
 export function Contacto() {
   return (
-    <div >
+    <div className="inicio">
     <NavbarUser />
     <section className="menu">
-      <h1> ESCRÍBENOS</h1>
+      <h1> Bonsáis únicos en el Ecuador🎋</h1>
     <div className="columna">
       <div className="foto">
   <img src={Foto1} />
