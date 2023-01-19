@@ -1,12 +1,13 @@
 import { NavbarUser } from "../../Components/UserForm/NavbarUser";
 import { Footer } from "../../Components/UserForm/Footer";
-import Portada from '../../Assets/fondobonsai1.jpg'
+import Foto from '../../Assets/fondobonsai1.jpg'
 import "./user.css";
 export function Inicio() {
   return (
     <div>
-      <NavbarUser />
+     
       <div className="inicio">
+      <NavbarUser />
         <div className="text-left">
           <table className="eslogan">
           <tr>
@@ -20,7 +21,7 @@ export function Inicio() {
             </p>
             </td>
             <td>
-              <img className="portada" src={Portada} alt="iniciofoto"></img>
+              <img className="portada" src={Foto} ></img>
             </td>
             </tr>
             
