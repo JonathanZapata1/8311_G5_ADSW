@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Login.css';
 import { validarLogin } from '../../Controller/loginController';
-export function Login() {
+export function LoginUser() {
   let [username,setUsername]=useState("");
   let [password,setPassword]=useState("");
   return (
@@ -51,7 +51,7 @@ export function Login() {
           </div>
           <div className="card-footer">
             <div className="d-flex justify-content-center links">
-              Don't have an account?<a href="/register">Sign Up</a>
+              Don't have an account?<a href="/user/register">Sign Up</a>
             </div>
           </div>
         </div>

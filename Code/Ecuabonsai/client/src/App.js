@@ -9,6 +9,8 @@ import { CatalogoUser } from "./Vistas/UserVistas/CatalogoUser";
 import { Mantenimiento } from "./Vistas/UserVistas/Mantenimiento";
 import { Contacto } from "./Vistas/UserVistas/Contacto";
 import { Micuenta } from "./Vistas/UserVistas/Micuenta";
+import {Register} from "./Components/Login.js/Register"
+import {RegisterUser} from "./Vistas/UserVistas/RegisterUsuario"
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login />}></Route>
+            <Route path="/register" element={<Register />} />
             <Route path="/update" element={<Update />} />
             <Route path="/delete" element={<Delete />} />
             <Route path="/create" element={<Create />} />
@@ -39,6 +42,7 @@ function App() {
             <Route path="/user/mantenimiento_y_servicio" element={<Mantenimiento/>} />
             <Route path="/user/contacto" element={<Contacto/>} />
             <Route path="/user/micuenta" element={<Micuenta/>} />
+            <Route path="/user/register" element={<RegisterUser/>} />
           </Routes>
         </BrowserRouter>
       </body>
