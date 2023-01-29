@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+
 // Rutas
 
 
@@ -10,7 +11,9 @@ const catalogoRoutes = require('./routes/catalogoRoutes');
 const productRoutes = require('./routes/productRoutes');
 const promotionRoutes = require('./routes/promotionRoutes');
 const repositorioRoutes = require('./routes/repositorioRoutes');
+/*const loginRoutes = require('./routes/loginRoutes');*/
 const userRoutes = require('./routes/userRoutes');
+
 
 const app = express();
 
@@ -45,9 +48,11 @@ app.use('/', productRoutes());
 app.use('/', promotionRoutes());
 app.use('/',repositorioRoutes());
 app.use('/', userRoutes());
+/*app.use('/',loginRoutes());*/
 app.use(express.static('uploads'));
 
 // server port
+
 
 const port = process.env.PORT || 5000;
 
