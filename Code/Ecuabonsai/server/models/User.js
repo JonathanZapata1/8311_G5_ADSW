@@ -5,7 +5,7 @@ const userSchema = new Schema({
   nombreusuario: { type: String, trim: true, require: true },
   contraseña: { type: String, trim: true, require: true },
   correo: { type: String, trim: true, /*unique:true*/},
-  rol: { type: String, trim: true },
+  role: { type: String, trim: true },
 });
 
 module.exports = model("User", userSchema);

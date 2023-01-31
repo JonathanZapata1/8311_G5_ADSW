@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Login.css';
-/*import { validarLogin } from '../../Controller/loginController';*/
+
 
 export function Login() {
   const [username,setUsername]=useState("");
@@ -33,11 +33,12 @@ export function Login() {
     );
 
     if (user) {
-      if (user.rol === 'admin') {
+      if (user.role === 'admin') {
         // Redirect to admin page
         console.log('Admin login successful');
         window.location.href=`http://localhost:3000/create`
-      } else if (user.rol === 'user') {
+        
+      } else if (user.role === '') {
         // Redirect to user page
         window.location.href=`http://localhost:3000/user/inicio`
         console.log('User login successful');

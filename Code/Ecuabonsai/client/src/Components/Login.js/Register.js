@@ -1,43 +1,51 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "./Login.css";
-/*import { validarLogin } from "../../Controller/loginController";*/
+
 
 export function Register() {
-  const [name, setName] = useState('');
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-  
-    const handleNameChange = (event) => {
-      setName(event.target.value);
-    };
-    const handleUsernameChange = (event) => {
-      setUsername(event.target.value);
-    };
-    const handleEmailChange = (event) => {
-      setEmail(event.target.value);
-    };
-    const handlePasswordChange = (event) => {
-      setPassword(event.target.value);
-    };
-  
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-  
-      try {
-        const response = await axios.post('http://localhost:5000/user', {
-          name,
-          username,
-          email,
-          password,
-        });
-  
-        console.log(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+
+  const [nombre, setName] = useState('');
+  const [nombreusuario, setUsername] = useState('');
+  const [correo, setEmail] = useState('');
+  const [contraseña, setPassword] = useState('');
+  const[role , setRole] = useState('')
+
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+   };
+
+   const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+   const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleRoleChange = (event) => {
+    setRole(event.target.value);
+  };
+
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/user', {
+      nombre,
+      nombreusuario,
+      correo,
+      contraseña,
+      role,
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="containerlogin">
@@ -47,7 +55,7 @@ export function Register() {
             <h3>Registrar</h3>
           </div>
           <div className="card-body">
-            <form
+            <form onSubmit={handleSubmit}
             >
               <div className="input-group form-group">
                 <div className="input-group-prepend">
@@ -59,7 +67,10 @@ export function Register() {
                   type="text"
                   className="form-control"
                   placeholder="Nombre"
+                  value={nombre}
+                  onChange={handleNameChange}
                 />
+                
               </div>
 
 
@@ -73,6 +84,8 @@ export function Register() {
                   type="email"
                   className="form-control"
                   placeholder="Email"
+                  value={correo} 
+                  onChange={handleEmailChange}
                 />
                 
               </div>
@@ -87,6 +100,8 @@ export function Register() {
                   type="text"
                   className="form-control"
                   placeholder="username"
+                  value={nombreusuario}
+                  onChange={handleUsernameChange}
                
                 />
               </div>
@@ -101,9 +116,18 @@ export function Register() {
                   type="password"
                   className="form-control"
                   placeholder="password"
+                  value={contraseña} 
+                  onChange={handlePasswordChange}
                   
                 />
               </div>
+              <input
+               type="hidden"
+                name="role"
+                value={role}
+                onChange={handleRoleChange}
+                 />
+                 
               <div className="form-group">
                 <button type="submit" className="btn float-right login_btn">
                   Registrar
