@@ -51,7 +51,7 @@ export function LoginUser() {
           </div>
           <div className="card-footer">
             <div className="d-flex justify-content-center links">
-              Don't have an account?<a href="/user/register">Sign Up</a>
+              Don't have an account?<a href="/register/user">Sign Up</a>
             </div>
           </div>
         </div>

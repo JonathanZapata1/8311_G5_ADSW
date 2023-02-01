@@ -19,27 +19,27 @@ export function NavbarUser() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link text-black" href="/user/inicio">
+                <a className="nav-link text-black" href="/inicio">
                   Inicio
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/user/catalogo">
+                <a className="nav-link text-black" href="/catalogo">
                   Catálogo
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/user/mantenimiento_y_servicio">
+                <a className="nav-link text-black" href="/mantenimiento_y_servicio">
                   Mantenimiento y Servicio
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/user/contacto">
+                <a className="nav-link text-black" href="/contacto">
                   Conócenos
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/user/micuenta">
+                <a className="nav-link text-black" href="/micuenta">
                   Mi cuenta
                 </a>
               </li>

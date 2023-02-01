@@ -37,12 +37,12 @@ function App() {
             <Route path="/update" element={<Update />} />
             <Route path="/delete" element={<Delete />} />
             <Route path="/create" element={<Create />} />
-            <Route path="/user/inicio" element={<Inicio/>} />
-            <Route path="/user/catalogo" element={<CatalogoUser/>} />
-            <Route path="/user/mantenimiento_y_servicio" element={<Mantenimiento/>} />
-            <Route path="/user/contacto" element={<Contacto/>} />
-            <Route path="/user/micuenta" element={<Micuenta/>} />
-            <Route path="/user/register" element={<RegisterUser/>} />
+            <Route path="/inicio" element={<Inicio/>} />
+            <Route path="/catalogo" element={<CatalogoUser/>} />
+            <Route path="/mantenimiento_y_servicio" element={<Mantenimiento/>} />
+            <Route path="/contacto" element={<Contacto/>} />
+            <Route path="/micuenta" element={<Micuenta/>} />
+            <Route path="/register/user" element={<RegisterUser/>} />
           </Routes>
         </BrowserRouter>
       </body>

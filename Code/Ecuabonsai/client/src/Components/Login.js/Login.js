@@ -40,7 +40,7 @@ export function Login() {
         
       } else if (user.role === '') {
         // Redirect to user page
-        window.location.href=`http://localhost:3000/user/inicio`
+        window.location.href=`http://localhost:3000/inicio`
         console.log('User login successful');
       }
     } else {
