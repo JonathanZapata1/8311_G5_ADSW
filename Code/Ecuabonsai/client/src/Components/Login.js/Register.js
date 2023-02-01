@@ -42,6 +42,8 @@ export function Register() {
       role,
       });
       console.log(response.data);
+      alert("Se ha registrado su datos correctamente");
+      window.location.href=`http://localhost:3000/`
     } catch (error) {
       console.error(error);
     }

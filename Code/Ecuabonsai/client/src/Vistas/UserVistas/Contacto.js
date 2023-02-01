@@ -12,13 +12,13 @@ export function Contacto() {
       <h1> Bonsáis únicos en el Ecuador🎋</h1>
     <div className="columna">
       <div className="foto">
-  <img src={Foto1} />
+  <img src={Foto1} alt="foto1" />
       </div>
       <div className="foto">
-        <img src={Foto2} />
+        <img src={Foto2} alt='foto2'/>
       </div>
       <div className="foto">
-        <img src={Foto3} />
+        <img src={Foto3} alt="foto3" />
       </div>
     </div>
   </section>
