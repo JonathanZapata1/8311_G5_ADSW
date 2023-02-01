@@ -16,6 +16,7 @@ export function NavbarUser() {
           >
             <i className="fas fa-bars" />
           </button>
+          
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -38,13 +39,12 @@ export function NavbarUser() {
                   Conócenos
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-black" href="/micuenta">
-                  Mi cuenta
-                </a>
-              </li>
+              
             </ul>
           </div>
+
+        
+
           <div className="dropdown ">
             <img
               className="rounded-3"
@@ -54,7 +54,18 @@ export function NavbarUser() {
               alt="MDB Logo"
               loading="lazy"
             />
+            </div>
+
+            <div className="dropdown ">
+           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+                <a className="nav-link text-black" href="/micuenta">
+                  Mi cuenta
+                </a>
+              </li>
+              </ul>
           </div>
+
         </div>
       </nav>
     </>
