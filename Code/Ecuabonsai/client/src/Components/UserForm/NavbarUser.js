@@ -60,7 +60,7 @@ export function NavbarUser() {
            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
                 <a className="nav-link text-black" href="/micuenta">
-                  Mi cuenta
+                  cuenta
                 </a>
               </li>
               </ul>
