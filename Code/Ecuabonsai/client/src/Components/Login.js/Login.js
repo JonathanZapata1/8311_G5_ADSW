@@ -57,10 +57,7 @@ export function Login() {
             <h3>Iniciar Sesion</h3>
           </div>
           <div className="card-body">
-            <form /*onSubmit={(e)=>{
-              e.preventDefault();
-              validarLogin(username,password);
-            }} */
+            <form 
             onSubmit={handleSubmit}
              >
               <div className="input-group form-group">
@@ -75,7 +72,7 @@ export function Login() {
                   placeholder="Username"
                   value={username} 
                   onChange={handleUsernameChange}
-                  /*onChange={(e)=>{setUsername(e.target.value)}}*/
+                  
                 />
               </div>
               <div className="input-group form-group">
@@ -90,7 +87,7 @@ export function Login() {
                   placeholder="Password"
                   value={password} 
                   onChange={handlePasswordChange}
-                 /* onChange={(e)=>{setPassword(e.target.value)}}*/
+                
                 />
               </div>
               <div className="form-group">
