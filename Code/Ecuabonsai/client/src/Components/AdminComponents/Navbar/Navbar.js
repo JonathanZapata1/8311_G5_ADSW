@@ -1,7 +1,7 @@
 import "./Navbar.css";
-import Logo from '../../Assets/logo.jpg'
+import Logo from '../../../Assets/logo.jpg'
+
 export function Navbar() {
- 
 
   return (
     <>
@@ -31,7 +31,7 @@ export function Navbar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="#">
+                <a className="nav-link text-black" href="/update">
                   Consultar
                 </a>
               </li>

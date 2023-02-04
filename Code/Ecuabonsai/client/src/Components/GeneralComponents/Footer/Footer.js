@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook,faInstagram,faTiktok } from '@fortawesome/free-brands-svg-icons';
-import './UserForm.css'
+import './Footer.css'
 export function Footer(){
     return (
         <footer className='footerM'>

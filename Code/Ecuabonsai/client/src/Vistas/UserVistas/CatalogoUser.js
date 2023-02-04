@@ -1,6 +1,6 @@
-import { NavbarUser } from "../../Components/UserForm/NavbarUser";
-import { UserForm } from "../../Components/UserForm/UserForm";
-import {Footer} from "../../Components/UserForm/Footer";
+import { NavbarUser } from "../../Components/UserComponents/UserForm/NavbarUser";
+import { UserForm } from "../../Components/UserComponents/UserForm/UserForm";
+import {Footer} from "../../Components/GeneralComponents/Footer/Footer";
 import "./user.css";
 
 export function CatalogoUser() {

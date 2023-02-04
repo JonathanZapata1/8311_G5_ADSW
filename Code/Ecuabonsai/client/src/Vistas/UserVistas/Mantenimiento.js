@@ -1,5 +1,5 @@
-import { NavbarUser } from "../../Components/UserForm/NavbarUser";
-import { Footer } from "../../Components/UserForm/Footer";
+import { NavbarUser } from "../../Components/UserComponents/UserForm/NavbarUser";
+import { Footer } from "../../Components/GeneralComponents/Footer/Footer";
 import ImagenMant from "../../Assets/servicios.jpg";
 import Servicio1 from "../../Assets/servicio1.jpg";
 import Servicio2 from "../../Assets/servicio2.jpg";

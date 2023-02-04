@@ -1,5 +1,5 @@
-import { NavbarUser } from "../../Components/UserForm/NavbarUser";
-import { Footer } from "../../Components/UserForm/Footer";
+import { NavbarUser } from "../../Components/UserComponents/UserForm/NavbarUser";
+import { Footer } from "../../Components/GeneralComponents/Footer/Footer";
 import Foto from '../../Assets/fondobonsai1.jpg'
 import "./user.css";
 export function Inicio() {

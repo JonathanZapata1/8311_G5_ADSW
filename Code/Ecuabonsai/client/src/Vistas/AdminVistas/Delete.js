@@ -1,5 +1,5 @@
-import { DeleteForm } from "../../Components/DeleteForm/DeleteForm";
-import { Navbar } from "../../Components/Navbar/Navbar";
+import { DeleteForm } from "../../Components/AdminComponents/DeleteForm/DeleteForm";
+import { Navbar } from "../../Components/AdminComponents/Navbar/Navbar";
 export function Delete() {
   return (
     <div>

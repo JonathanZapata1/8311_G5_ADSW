@@ -1,5 +1,5 @@
-import { Navbar } from "../../Components/Navbar/Navbar";
-import { CreateForm } from "../../Components/CreateForm/CreateFrom";
+import { Navbar } from "../../Components/AdminComponents/Navbar/Navbar";
+import { CreateForm } from "../../Components/AdminComponents/CreateForm/CreateFrom";
 
 export function Create() {
   return (

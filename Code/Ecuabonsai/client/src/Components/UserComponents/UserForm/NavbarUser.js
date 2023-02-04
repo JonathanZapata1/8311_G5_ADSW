@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../Navbar/Navbar.css";
-import Logo from "../../Assets/logo.jpg";
+import "../../AdminComponents/Navbar/Navbar.css";
+import Logo from "../../../Assets/logo.jpg";
 
 
 export function NavbarUser() {

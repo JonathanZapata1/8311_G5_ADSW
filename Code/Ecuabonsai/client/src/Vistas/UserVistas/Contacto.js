@@ -1,5 +1,5 @@
-import { NavbarUser } from "../../Components/UserForm/NavbarUser";
-import { Footer } from "../../Components/UserForm/Footer";
+import { NavbarUser } from "../../Components/UserComponents/UserForm/NavbarUser";
+import { Footer } from "../../Components/GeneralComponents/Footer/Footer";
 import "./user.css";
 import Foto1 from "../../Assets/bonsai1.png";
 import Foto2 from "../../Assets/bonsai2.png";

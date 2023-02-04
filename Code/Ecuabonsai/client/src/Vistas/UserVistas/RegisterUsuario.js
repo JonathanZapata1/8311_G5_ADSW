@@ -1,6 +1,6 @@
-import { NavbarUser } from "../../Components/UserForm/NavbarUser";
-import { Register } from "../../Components/Login.js/Register";
-import { Footer } from "../../Components/UserForm/Footer";
+import { NavbarUser } from "../../Components/UserComponents/UserForm/NavbarUser";
+import { Register } from "../../Components/AdminComponents/LoginAdmin/Register";
+import { Footer } from "../../Components/GeneralComponents/Footer/Footer";
 import './user.css'
 
 export function RegisterUser() {

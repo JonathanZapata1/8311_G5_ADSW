@@ -1,6 +1,6 @@
-import { NavbarUser } from "../../Components/UserForm/NavbarUser";
-import {LoginUser} from "../../Components/Login.js/LoginUser"
-import { Footer } from "../../Components/UserForm/Footer";
+import { NavbarUser } from "../../Components/UserComponents/UserForm/NavbarUser";
+import {LoginUser} from "../../Components/UserComponents/LoginUser/LoginUser"
+import { Footer } from "../../Components/GeneralComponents/Footer/Footer";
 export function Micuenta() {
   return (
     <div className="inicio" >
