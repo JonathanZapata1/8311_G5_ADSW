@@ -8,6 +8,7 @@ export function CatalogoUser() {
     <div className="inicio">
     <NavbarUser />
       <div className="form">
+      
         <UserForm />
       </div>
       <Footer/>

@@ -1,14 +1,17 @@
 .imgCat{
     width: auto;
     height: 200px;
+    border-radius: 30px;
 }
 
 .col{
     margin-top: 0%;
     margin-left: 20px;
+    border-radius: 30px;
 }
 .card-body{
     color: aliceblue;
+    border-radius: 30px;
 }
 .fa-user-alt{
     font-size:25px;

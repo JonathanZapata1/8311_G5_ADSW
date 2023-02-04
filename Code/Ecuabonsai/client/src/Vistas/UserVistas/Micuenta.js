@@ -5,7 +5,12 @@ export function Micuenta() {
   return (
     <div className="inicio" >
     <NavbarUser />
-       <LoginUser/>
+    <div className="registerPropaganda">
+      <p>¿Ya tienes cuenta? Haz clic en este botón e introduce tus datos de usuario y continua con tu compra.</p>
+      </div>
+      <div className="register">
+          <LoginUser/>
+        </div>
        <Footer/>
     </div>
   );

@@ -4,9 +4,7 @@ import Foto from '../../Assets/fondobonsai1.jpg'
 import "./user.css";
 export function Inicio() {
   return (
-    <div>
-     
-      <div className="inicio">
+     <div className="inicio">
       <NavbarUser />
         <div className="text-left">
           <table className="eslogan">
@@ -21,13 +19,21 @@ export function Inicio() {
             </p>
             </td>
             <td>
-              <img className="portada" src={Foto} ></img>
+            <div className="portada">
+              <img  src={Foto} alt="foto" ></img>
+              </div>
             </td>
             </tr>
             
+            
           </table>
         </div>
-      </div>
+        <section>
+        <div className="portada">
+              <img  src={Foto} alt="foto" ></img>
+              </div>
+         </section>
+     
       <Footer />
     </div>
   );
