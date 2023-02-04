@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Login.css';
 
 
-export function LoginUser() {
+export function LoginUser(props) {
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
   const [userData, setUserData] = useState([]);
@@ -41,12 +41,14 @@ export function LoginUser() {
       } else if (user.role === '') {
         // Redirect to user page
         window.location.href=`http://localhost:3000/inicio`
+       
         console.log('User login successful');
       }
     } else {
       alert("Contraseña o usuario incorrecto");
     }
   };
+  
 
   return (
     
@@ -71,6 +73,7 @@ export function LoginUser() {
                   className="form-control"
                   placeholder="Username"
                   value={username} 
+                  
                   onChange={handleUsernameChange}
                   
                 />
@@ -97,6 +100,9 @@ export function LoginUser() {
               </div>
             </form>
           </div>
+          <div>
+            
+          </div>
           <div className="card-footer">
             <div className="d-flex justify-content-center links">
               Don't have an account?<a href="/register/user">Sign Up</a>
@@ -106,6 +112,6 @@ export function LoginUser() {
       </div>
     </div>
 
-
   );
+
 }

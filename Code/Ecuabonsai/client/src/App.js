@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login } from "./Components/LoginAdmin/Login";
+import { Login } from "./Components/AdminComponents/LoginAdmin/Login";
 import { Update } from "./Vistas/AdminVistas/Update";
 import { Delete } from "./Vistas/AdminVistas/Delete";
 import { Create } from "./Vistas/AdminVistas/Create";
@@ -9,7 +9,7 @@ import { CatalogoUser } from "./Vistas/UserVistas/CatalogoUser";
 import { Mantenimiento } from "./Vistas/UserVistas/Mantenimiento";
 import { Contacto } from "./Vistas/UserVistas/Contacto";
 import { Micuenta } from "./Vistas/UserVistas/Micuenta";
-import {Register} from "./Components/LoginAdmin/Register"
+import {Register} from "./Components/AdminComponents/LoginAdmin/Register"
 import {RegisterUser} from "./Vistas/UserVistas/RegisterUsuario"
 import {Error404} from "./Components/GeneralComponents/Error404/Error404"
 

@@ -1,8 +1,11 @@
+import "./UpdateForm.css";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
 import axios from "axios";
-import "./UpdateForm.css";
+
+
+
 export const getProductos = async () => {
   try {
     const response = await axios.get(`http://localhost:5000/producto`);

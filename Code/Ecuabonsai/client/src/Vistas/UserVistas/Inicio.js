@@ -36,5 +36,6 @@ export function Inicio() {
      
       <Footer />
     </div>
+    
   );
 }

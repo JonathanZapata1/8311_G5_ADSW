@@ -1,24 +1,9 @@
-import React, { useState, useEffect } from "react";
 import "../../AdminComponents/Navbar/Navbar.css";
 import Logo from "../../../Assets/logo.jpg";
 
 
 export function NavbarUser() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const response = await fetch("/");
-        const data = await response.json();
-        setUser(data.user);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchUser();
-  }, []);
-
+ 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-cream">
@@ -80,8 +65,8 @@ export function NavbarUser() {
                 <a className="nav-link text-black" href="/micuenta">
                   <i className="fas fa-user-alt" />
                   <br />
-                  {user ? ( <p>{user.nombreusuario}</p>):
-                  (<p>Mi cuenta</p>)}
+                Mi cuenta
+                 
                 </a>
               </li>
             </ul>
