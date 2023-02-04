@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./Components/Login.js/Login";
-import { Update } from "./Vistas/Update";
-import { Delete } from "./Vistas/Delete";
-import { Create } from "./Vistas/Create";
+import { Update } from "./Vistas/AdminVistas/Update";
+import { Delete } from "./Vistas/AdminVistas/Delete";
+import { Create } from "./Vistas/AdminVistas/Create";
 import { Inicio } from "./Vistas/UserVistas/Inicio";
 import { CatalogoUser } from "./Vistas/UserVistas/CatalogoUser";
 import { Mantenimiento } from "./Vistas/UserVistas/Mantenimiento";
@@ -11,8 +11,10 @@ import { Contacto } from "./Vistas/UserVistas/Contacto";
 import { Micuenta } from "./Vistas/UserVistas/Micuenta";
 import {Register} from "./Components/Login.js/Register"
 import {RegisterUser} from "./Vistas/UserVistas/RegisterUsuario"
+import {Error404} from "./Components/Error404/Error404"
 
 function App() {
+
   return (
     <div className="App">
       <header className="headerLogin">
@@ -32,17 +34,18 @@ function App() {
       <body>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Login />}></Route>
-            <Route path="/register" element={<Register />} />
-            <Route path="/update" element={<Update />} />
-            <Route path="/delete" element={<Delete />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/inicio" element={<Inicio/>} />
-            <Route path="/catalogo" element={<CatalogoUser/>} />
-            <Route path="/mantenimiento_y_servicio" element={<Mantenimiento/>} />
-            <Route path="/contacto" element={<Contacto/>} />
-            <Route path="/micuenta" element={<Micuenta/>} />
-            <Route path="/register/user" element={<RegisterUser/>} />
+            <Route exact path="/" element={<Login />}></Route>
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/update" element={<Update />} />
+            <Route exact path="/delete" element={<Delete />} />
+            <Route exact path="/create" element={<Create />} />
+            <Route exact path="/inicio" element={<Inicio/>} />
+            <Route exact path="/catalogo" element={<CatalogoUser/>} />
+            <Route exact path="/mantenimiento_y_servicio" element={<Mantenimiento/>} />
+            <Route exact path="/Conocenos" element={<Contacto/>} />
+            <Route exact path="/micuenta" element={<Micuenta/>} />
+            <Route exact path="/register/user" element={<RegisterUser/>} />
+            <Route exact path="*" element={<Error404/>}/>
           </Routes>
         </BrowserRouter>
       </body>

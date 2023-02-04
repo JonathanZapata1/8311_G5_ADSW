@@ -1,6 +1,24 @@
+import React, { useState, useEffect } from "react";
 import "../Navbar/Navbar.css";
 import Logo from "../../Assets/logo.jpg";
+
+
 export function NavbarUser() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch("/");
+        const data = await response.json();
+        setUser(data.user);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchUser();
+  }, []);
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-cream">
@@ -14,9 +32,9 @@ export function NavbarUser() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <i className="fas fa-bars" />
+             <i className="fas fa-bars" />
           </button>
-          
+
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -30,20 +48,20 @@ export function NavbarUser() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/mantenimiento_y_servicio">
+                <a
+                  className="nav-link text-black"
+                  href="/mantenimiento_y_servicio"
+                >
                   Mantenimiento y Servicio
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/contacto">
+                <a className="nav-link text-black" href="/conocenos">
                   Conócenos
                 </a>
               </li>
-              
             </ul>
           </div>
-
-        
 
           <div className="dropdown ">
             <img
@@ -54,18 +72,20 @@ export function NavbarUser() {
               alt="MDB Logo"
               loading="lazy"
             />
-            </div>
-
-            <div className="dropdown ">
-           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-                <a className="nav-link text-black" href="/micuenta">
-                  cuenta
-                </a>
-              </li>
-              </ul>
           </div>
 
+          <div className="dropdown ">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link text-black" href="/micuenta">
+                  <i className="fas fa-user-alt" />
+                  <br />
+                  {user ? ( <p>{user.nombreusuario}</p>):
+                  (<p>Mi cuenta</p>)}
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </>

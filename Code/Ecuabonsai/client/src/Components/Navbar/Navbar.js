@@ -1,6 +1,8 @@
 import "./Navbar.css";
 import Logo from '../../Assets/logo.jpg'
 export function Navbar() {
+ 
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-cream">
@@ -38,11 +40,7 @@ export function Navbar() {
                   Eliminar
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link text-black" href="/user/inicio">
-                  User view
-                </a>
-              </li>
+              
             </ul>
           </div>
           <div className="dropdown ">

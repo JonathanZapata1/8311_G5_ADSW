@@ -10,3 +10,14 @@
 .card-body{
     color: aliceblue;
 }
+.fa-user-alt{
+    font-size:25px;
+    text-align: center;
+}
+ul{
+    line-height: 0.8em;
+}
+
+.dropdown{
+    padding-left: 30px;
+}

@@ -1,8 +1,9 @@
 import "./DeleteForm.css";
 import React, { useState } from "react";
-import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import { Modal, ModalBody, ModalFooter } from "reactstrap";
 import { useEffect } from "react";
 import axios from "axios";
+
 export const getProductos = async () => {
   try {
     const response = await axios.get(`http://localhost:5000/catalogo`);
@@ -13,14 +14,8 @@ export const getProductos = async () => {
 };
 
 export function DeleteForm() {
-  const [data, setData] = useState([
-    {
-      id: "",
-      catalogo: "",
-      descripcion: "",
-    },
-  ]);
-  const [modalEditar, setModalEditar] = useState(false);
+  
+  const [setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [bonsaiSeleccionado, setBonsaiSeleccionado] = useState({
     id: "",
@@ -32,27 +27,7 @@ export function DeleteForm() {
       caso === "Editar" ? setModalEditar(true) : setModalEliminar(true);
     };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setBonsaiSeleccionado((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const editar = () => {
-    var dataNueva = data;
-    dataNueva.map((bonsai) => {
-      if (bonsai.id === bonsaiSeleccionado.id) {
-        bonsai.descripcion = bonsaiSeleccionado.descripcion;
-        bonsai.catalogo = bonsaiSeleccionado.catalogo;
-      }
-    });
-    setData(dataNueva);
-    setModalEditar(false);
-  };
-
-  const eliminar = () => {
+    const eliminar = () => {
     setUsers(users.filter((bonsai) => bonsai._id !== bonsaiSeleccionado._id));
     setModalEliminar(false);
   };
@@ -75,10 +50,10 @@ export function DeleteForm() {
         <table className="table table-striped ">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>catalogo</th>
-              <th>Descripcion</th>
-              <th>Acciones</th>
+              <th scope="col">ID</th>
+              <th scope="col">catalogo</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -101,50 +76,7 @@ export function DeleteForm() {
         </table>
       </div>
 
-      <Modal isOpen={modalEditar}>
-        <ModalHeader>
-          <div>
-            <h3>Editar País</h3>
-          </div>
-        </ModalHeader>
-        <ModalBody>
-          <div className="form-group">
-            <label>ID</label>
-            <input
-              className="form-control"
-              readOnly
-              type="text"
-              name="id"
-              value={bonsaiSeleccionado && bonsaiSeleccionado.id}
-            />
-            <br />
-            <br />
-
-            <label>Descripcion</label>
-            <input
-              className="form-control"
-              type="text"
-              name="descripcion"
-              value={bonsaiSeleccionado && bonsaiSeleccionado.descripcion}
-              onChange={handleChange}
-            />
-            <br />
-            <br />
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <button className="btn btn-primary" onClick={() => editar()}>
-            Actualizar
-          </button>
-          <button
-            className="btn btn-danger"
-            onClick={() => setModalEditar(false)}
-          >
-            Cancelar
-          </button>
-        </ModalFooter>
-      </Modal>
-
+      
       <Modal isOpen={modalEliminar}>
         <ModalBody>
           Estás Seguro que deseas eliminar el catalogo{" "}

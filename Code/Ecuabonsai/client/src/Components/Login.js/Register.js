@@ -126,6 +126,7 @@ export function Register() {
               <input
                type="hidden"
                 name="role"
+                placeholder='user'
                 value={role}
                 onChange={handleRoleChange}
                  />

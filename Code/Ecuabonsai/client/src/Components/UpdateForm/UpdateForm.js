@@ -27,11 +27,10 @@ export function UpdateForm() {
       id: "",
       producto: "",
       descripcion: "",
-      foto: "",
       promocion: "",
     },
   ]);
-  
+
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [bonsaiSeleccionado, setBonsaiSeleccionado] = useState({
@@ -59,7 +58,6 @@ export function UpdateForm() {
       if (bonsai._id === bonsaiSeleccionado._id) {
         bonsai.especie = bonsaiSeleccionado.especie;
         bonsai.descripcion = bonsaiSeleccionado.descripcion;
-        bonsai.foto = bonsaiSeleccionado.foto;
         bonsai.promocion = bonsaiSeleccionado.promocion;
       }
     });
@@ -90,7 +88,6 @@ export function UpdateForm() {
               <th>ID</th>
               <th>Producto</th>
               <th>Descripcion</th>
-              <th>Foto</th>
               <th>Promocion</th>
               <th>Acciones</th>
             </tr>
@@ -101,9 +98,6 @@ export function UpdateForm() {
                 <td>{elemento._id}</td>
                 <td>{elemento.especie}</td>
                 <td>{elemento.descripcion}</td>
-                <td>
-                  <img className="imagenArbol" src={elemento.foto} />
-                </td>
                 <td>{elemento.promocion}</td>
                 <td>
                   <button
@@ -155,24 +149,7 @@ export function UpdateForm() {
               onChange={handleChange}
             />
             <br />
-            <label>Foto</label>
-            <input
-              className="form-control"
-              type="text"
-              name="foto"
-              value={bonsaiSeleccionado && bonsaiSeleccionado.foto}
-              onChange={handleChange}
-            />
-            <input
-              className="form-control"
-              type="file"
-              name="foto"
-              access="false"
-              multiple="false"
-              id="file-1661659003480"
-              value={bonsaiSeleccionado && bonsaiSeleccionado.foto}
-              onChange={handleChange}
-            />
+
             <br />
             <label>Promocion</label>
             <select
