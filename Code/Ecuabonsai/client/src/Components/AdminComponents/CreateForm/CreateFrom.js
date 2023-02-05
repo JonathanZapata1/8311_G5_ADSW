@@ -28,6 +28,10 @@ export function CreateForm() {
     getProducts();
     getPromos();
   }, []);
+  const handleClick = () => {
+    
+  alert("El producto se ha ingresado correctamente");
+  }
 
   return (
     <div className="container blur">
@@ -36,6 +40,7 @@ export function CreateForm() {
           className="card text-white bg-secondary border-primary center"
           style={{ width: "20rem",  height:"30rem"}}
         >
+        <form  >
           <div className="rendered-form">
             <div className="formbuilder-select form-group field-select-1661658959184">
               <label
@@ -80,8 +85,8 @@ export function CreateForm() {
               >
                 Descripcion del producto 
               </label>
-              <div className="formbuilder-select form-group field-select-1661658959184">
-              <input type="text" >
+              <div className="textDiv">
+              <input className="form-control" type="text" >
 
               </input>
               </div>
@@ -116,12 +121,15 @@ export function CreateForm() {
                 access="false"
                 style={{}}
                 id="button-1661661233333"
+                onClick={handleClick}
               >
                 Enviar
               </button>
             </div>
           </div>
+          </form>
         </div>
+     
       </center>
     </div>
   );

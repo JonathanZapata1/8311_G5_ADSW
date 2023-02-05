@@ -27,14 +27,15 @@ export function Navbar() {
               </li>
               <li className="nav-item">
                 <a className="nav-link text-black" href="/update">
-                  Actualizar
+                  Actualizar promocion
                 </a>
               </li>
-              <li className="nav-item">
+             
+              {/* <li className="nav-item">
                 <a className="nav-link text-black" href="/update">
                   Consultar
                 </a>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link text-black" href="/delete">
                   Eliminar

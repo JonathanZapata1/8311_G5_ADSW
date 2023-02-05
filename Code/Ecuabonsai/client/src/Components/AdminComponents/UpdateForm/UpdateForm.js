@@ -83,7 +83,7 @@ export function UpdateForm() {
   return (
     <div className="container">
       <div className="blur">
-        <h2 className="tittle">Actualizar Productos Catalogo</h2>
+        <h2 className="tittle"></h2>
         <br />
         <table className="table table-striped ">
           <thead>
