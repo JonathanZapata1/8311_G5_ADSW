@@ -12,6 +12,8 @@ import { Micuenta } from "./Vistas/UserVistas/Micuenta";
 import {Register} from "./Components/AdminComponents/LoginAdmin/Register"
 import {RegisterUser} from "./Vistas/UserVistas/RegisterUsuario"
 import {Error404} from "./Components/GeneralComponents/Error404/Error404"
+import { ShoppingCartProvider } from "./Components/UserComponents/UserForm/ShoppingCartContext";
+
 
 function App() {
 
@@ -32,6 +34,7 @@ function App() {
         />
       </header>
       <body>
+      <ShoppingCartProvider>
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Login />}></Route>
@@ -48,6 +51,7 @@ function App() {
             <Route exact path="*" element={<Error404/>}/>
           </Routes>
         </BrowserRouter>
+        </ShoppingCartProvider>
       </body>
     </div>
   );

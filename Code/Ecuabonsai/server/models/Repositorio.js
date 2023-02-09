@@ -18,6 +18,11 @@ const repositorioSchema = new Schema({
         trim: true,
         require: true 
     },
+    precio:{
+        type: Number,
+        trim: true,
+        require: true
+    },
     promocion:{
         type: String,
         trim: true,

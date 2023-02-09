@@ -24,10 +24,13 @@ export function UserForm() {
   };
 
   return (
-    <div>
       <div className="Container">
-        <Catalogo catalogos={catalogos} />
+        <div className="row">
+        {catalogos.map((item, index) => {
+          return <Catalogo key={index} {...item} />;
+        })}
+        </div>
+        
       </div>
-    </div>
   );
 }
