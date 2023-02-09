@@ -3,7 +3,8 @@ import axios from 'axios';
 import './Login.css';
 
 
-export function LoginUser(props) {
+export function LoginUser() {
+
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
   const [userData, setUserData] = useState([]);
@@ -33,15 +34,15 @@ export function LoginUser(props) {
     );
 
     if (user) {
-      if (user.role === 'admin') {
+      if (user.role === 'admin' ) {
         // Redirect to admin page
         console.log('Admin login successful');
-        window.location.href=`http://localhost:3000/create`
+         window.location.href=`http://localhost:3000/create`
+                
         
       } else if (user.role === '') {
         // Redirect to user page
-        window.location.href=`http://localhost:3000/inicio`
-       
+        window.location.href=`http://localhost:3000/inicio?username=` + encodeURIComponent(username);      
         console.log('User login successful');
       }
     } else {

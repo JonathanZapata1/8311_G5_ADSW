@@ -51,9 +51,7 @@ const Catalogo = ({ _id, nombre,foto,precio,descripcion,catalogos}) => {
   return (
     
    
-     <div className="col">
-    
-       
+     <div className="col">     
         <br></br>
             <div className="card"  style={{width: "18rem"}}>
                 <img className="imgCat" src={foto} alt="imagenes"></img>
