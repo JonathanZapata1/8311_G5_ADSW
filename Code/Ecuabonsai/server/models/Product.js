@@ -14,7 +14,7 @@ const customersSchema = new Schema({
         require: true
     },
     precio: {
-        type: String,
+        type: Number,
         trim: true,
         require: true
     },
@@ -23,7 +23,7 @@ const customersSchema = new Schema({
         trim: true,
         require: true
     },
-    tamanio: {
+    promocion: {
         type: String,
         trim: true,
         require: true
@@ -34,11 +34,6 @@ const customersSchema = new Schema({
         require: true
     },
     especie: {
-        type: String,
-        trim: true,
-        require: true
-    },
-    idPromocion:{
         type: String,
         trim: true,
         require: true

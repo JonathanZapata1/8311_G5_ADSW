@@ -30,8 +30,6 @@
 
 .eslogan {
   padding-top: 10px;
-}
-table {
   table-layout: fixed;
   width: 100%;
   height: 100%;
@@ -41,6 +39,7 @@ table {
   font-size: 1rem;
   position: absolute;
 }
+
 
 /*Footer*/
 .footer1 {
