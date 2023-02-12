@@ -3,7 +3,9 @@
     height: 200px;
     border-radius: 30px;
 }
-
+.col{
+    border-radius: 30px;
+}
 
 .card-body{
     color: aliceblue;

@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Login } from "./Components/AdminComponents/LoginAdmin/Login";
+// import { Login } from "./Components/AdminComponents/LoginAdmin/Login";
 import { Update } from "./Vistas/AdminVistas/Update";
 import { Delete } from "./Vistas/AdminVistas/Delete";
 import { Create } from "./Vistas/AdminVistas/Create";
@@ -37,12 +37,12 @@ function App() {
       <ShoppingCartProvider>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<Login />}></Route>
+            <Route exact path="/" element={<Inicio />}></Route>
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/update" element={<Update />} />
             <Route exact path="/delete" element={<Delete />} />
             <Route exact path="/create" element={<Create />} />
-            <Route exact path="/inicio" element={<Inicio/>} />
+            {/* <Route exact path="/inicio" element={<Inicio/>} /> */}
             <Route exact path="/catalogo" element={<CatalogoUser/>} />
             <Route exact path="/mantenimiento_y_servicio" element={<Mantenimiento/>} />
             <Route exact path="/Conocenos" element={<Contacto/>} />

@@ -37,12 +37,12 @@ export function LoginUser() {
       if (user.role === 'admin' ) {
         // Redirect to admin page
         console.log('Admin login successful');
-         window.location.href=`http://localhost:3000/create`
+         window.location.href=`http://localhost:3000/create?username=` + encodeURIComponent(username);
                 
         
       } else if (user.role === '') {
         // Redirect to user page
-        window.location.href=`http://localhost:3000/inicio?username=` + encodeURIComponent(username);      
+        window.location.href=`http://localhost:3000/?username=` + encodeURIComponent(username);      
         console.log('User login successful');
       }
     } else {

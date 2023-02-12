@@ -24,7 +24,13 @@ export function NavbarUser() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    if(user){
+    setShow(true);
+  }else{
+    alert("Inice Sesion para acceder al carrito");
+  }
+  }
 
   return (
     <>
@@ -44,25 +50,31 @@ export function NavbarUser() {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link text-black" href="/inicio">
+                <a className="nav-link text-black" href={`/?username=${user || ''}`}>
                   Inicio
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/catalogo">
+                <a
+                  className="nav-link text-black"
+                  href={`/catalogo?username=${user || ""}`}
+                >
                   Catálogo
                 </a>
               </li>
               <li className="nav-item">
                 <a
                   className="nav-link text-black"
-                  href="/mantenimiento_y_servicio"
+                  href={`/mantenimiento_y_servicio?username=${user || ""}`}
                 >
                   Mantenimiento y Servicio
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/conocenos">
+                <a
+                  className="nav-link text-black"
+                  href={`/conocenos?username=${user || ""}`}
+                >
                   Conócenos
                 </a>
               </li>
@@ -110,18 +122,22 @@ export function NavbarUser() {
             />
           </div>
 
-       
-            <Dropdown>
-              <Dropdown.Toggle variant="secondary">
-                <i className="fas fa-user-alt" /> <quote/>
-                {user}
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item href="/micuenta"> <i class="fas fa-sign-in-alt"/> Iniciar sesión</Dropdown.Item>
-                <Dropdown.Item href="/inicio"> <i class="fas fa-sign-out-alt"/> Cerrar sesión</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary">
+              <i className="fas fa-user-alt" /> <quote />
+              {user}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/micuenta">
+                {" "}
+                <i class="fas fa-sign-in-alt" /> Iniciar sesión
+              </Dropdown.Item>
+              <Dropdown.Item href="/">
+                {" "}
+                <i class="fas fa-sign-out-alt" /> Cerrar sesión
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </nav>
     </>

@@ -11,7 +11,7 @@ const catalogoRoutes = require('./routes/catalogoRoutes');
 const productRoutes = require('./routes/productRoutes');
 const promotionRoutes = require('./routes/promotionRoutes');
 const repositorioRoutes = require('./routes/repositorioRoutes');
-/*const loginRoutes = require('./routes/loginRoutes');*/
+const tipoProductRoutes = require('./routes/tipoProductRoutes.js');
 const userRoutes = require('./routes/userRoutes');
 
 
@@ -46,9 +46,10 @@ app.use(cors());
 app.use('/', catalogoRoutes());
 app.use('/', productRoutes());
 app.use('/', promotionRoutes());
-app.use('/',repositorioRoutes());
+app.use('/', repositorioRoutes());
+app.use('/', tipoProductRoutes());
 app.use('/', userRoutes());
-/*app.use('/',loginRoutes());*/
+
 app.use(express.static('uploads'));
 
 // server port

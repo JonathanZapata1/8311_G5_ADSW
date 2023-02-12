@@ -9,10 +9,10 @@ export function CreateForm() {
   useEffect(() => {
     async function getProducts() {
       var products = [];
-      let aux = (await axios.get(`${uri}producto`)).data;
+      let aux = (await axios.get(`${uri}tipoproducto`)).data;
       for (let i = 0; i < aux.length; i++) {
-        var especie = aux[i].especie;
-        products.push(<option>{especie}</option>);
+        var tipo = aux[i].tipo;
+        products.push(<option>{tipo}</option>);
       }
       setProducts(products);
     }
@@ -28,6 +28,7 @@ export function CreateForm() {
     getProducts();
     getPromos();
   }, []);
+
   const handleClick = () => {
     
   alert("El producto se ha ingresado correctamente");
@@ -38,7 +39,7 @@ export function CreateForm() {
       <center>
         <div
           className="card text-white bg-secondary border-primary center"
-          style={{ width: "20rem",  height:"30rem"}}
+          style={{ width: "20rem",  height:"35rem"}}
         >
         <form  >
           <div className="rendered-form">
@@ -93,6 +94,20 @@ export function CreateForm() {
             
             </div>
 
+            <div className="formbuilder-button form-group field-button-1661661233333">
+            <label
+                htmlFor="select-1661659027080"
+                className="formbuilder-select-label"
+              >
+                Precio del producto ($)
+              </label>
+              <div className="textDiv">
+              <input className="form-control" type="number" name="points" min="0" max="200" >
+
+              </input>
+              </div>
+            
+            </div>
 
             <div className="formbuilder-select form-group field-select-1661659027080">
               <label
@@ -119,7 +134,6 @@ export function CreateForm() {
                 className="btn-primary btn"
                 name="button-1661661233333"
                 access="false"
-                style={{}}
                 id="button-1661661233333"
                 onClick={handleClick}
               >

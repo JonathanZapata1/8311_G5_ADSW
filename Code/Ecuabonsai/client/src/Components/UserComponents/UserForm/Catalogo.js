@@ -7,9 +7,13 @@ import "./UserForm.css";
 
 const Catalogo = ({ _id, nombre,foto,precio,descripcion,catalogos}) => {
  
+  const params = new URLSearchParams(window.location.search);
+  const user = params.get("username");
+
   const[cart, setCart] = useContext(CartContext);
 
   const addCart = () =>{
+    if(user){
     setCart((currItems)=>{
        const isItemsFound = currItems.find((item)=> item._id === _id);
         if(isItemsFound){
@@ -24,6 +28,9 @@ const Catalogo = ({ _id, nombre,foto,precio,descripcion,catalogos}) => {
           return [...currItems, {_id, quantity: 1, precio: precio}]
         }
     })
+  }else{
+    alert("Inicie Sesión");
+  }
  };
 
  const removeItem =(_id)=>{

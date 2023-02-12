@@ -1,8 +1,10 @@
+import { Dropdown } from "react-bootstrap";
 import "./Navbar.css";
-import Logo from '../../../Assets/logo.jpg'
+import Logo from "../../../Assets/logo.jpg";
 
 export function Navbar() {
-
+  const params = new URLSearchParams(window.location.search);
+  const user = params.get("username");
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-cream">
@@ -30,18 +32,12 @@ export function Navbar() {
                   Actualizar promocion
                 </a>
               </li>
-             
-              {/* <li className="nav-item">
-                <a className="nav-link text-black" href="/update">
-                  Consultar
-                </a>
-              </li> */}
+
               <li className="nav-item">
                 <a className="nav-link text-black" href="/delete">
                   Eliminar
                 </a>
               </li>
-              
             </ul>
           </div>
           <div className="dropdown ">
@@ -51,9 +47,25 @@ export function Navbar() {
               height={70}
               width={100}
               alt="MDB Logo"
-              loading="lazy"  
+              loading="lazy"
             />
           </div>
+          <Dropdown>
+            <Dropdown.Toggle variant="secondary">
+              <i className="fas fa-user-alt" /> <quote />
+              {user}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/micuenta">
+                {" "}
+                <i class="fas fa-sign-in-alt" /> Iniciar sesión
+              </Dropdown.Item>
+              <Dropdown.Item href="/">
+                {" "}
+                <i class="fas fa-sign-out-alt" /> Cerrar sesión
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </nav>
     </>
