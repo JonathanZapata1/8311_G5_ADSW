@@ -1,9 +1,24 @@
+const express = require('express');
 const Customer = require('../models/Product');
+const multer = require('multer'); // Requiere multer para manejar la subida de archivos
+const path = require('path'); // Requiere el módulo de path de Node.js
 
+
+const storage = multer.diskStorage({
+    destination: '../uploads',
+    filename: (req, file, cb) => {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+  });
+  
+  const upload = multer({
+    storage: storage
+  }).single('imgUrl'); // El nombre 'imgUrl' debe coincidir con el nombre del campo en el formulario
+  
 // crear producto
-
 exports.create = async (req, res) => {
-    const customer = new Customer(req.body);
+  const customer = new Customer(req.body)
+   
 
     try {
         await customer.save();
@@ -16,6 +31,8 @@ exports.create = async (req, res) => {
         });  
     }
 }
+
+
 
 // listar producto
 

@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-
 // Rutas
 
 
@@ -16,6 +15,8 @@ const userRoutes = require('./routes/userRoutes');
 
 
 const app = express();
+
+
 
 app.get('/', (req, res) => {
     res.send('Página inicial');

@@ -34,6 +34,7 @@ export function CreateForm() {
   const [descripcion, setDescripcion] = useState("");
   const [precio, setPrecio] = useState(0);
   const [promocion, setPromocion] = useState("");
+  const [imgUrl, setImgUrl] = useState("");
 
   const handleTipoChange = (event) => {
     setTipo(Array.from(event.target.selectedOptions, (option) => option.value));
@@ -49,6 +50,9 @@ export function CreateForm() {
   const handlePromocionChange = (event) => {
     setPromocion(event.target.value);
   };
+  const handleImgUrlChange = (event) => {
+    setImgUrl(event.target.value);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -59,6 +63,7 @@ export function CreateForm() {
         descripcion,
         precio,
         promocion,
+        imgUrl
       });
       console.log(response.data);
       alert("Se ha registrado su producto correctamente ");
@@ -108,9 +113,11 @@ export function CreateForm() {
                   Subir Imagen
                 </label>
                 <input
+                value={imgUrl}
+                onChange={handleImgUrlChange}
                   type="file"
                   className="form-control"
-                  name="file-1661659003480"
+                  name="imgUrl"
                   access="false"
                   multiple="false"
                   id="file-1661659003480"

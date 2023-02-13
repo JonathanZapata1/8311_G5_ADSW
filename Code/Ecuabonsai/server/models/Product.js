@@ -37,12 +37,11 @@ const customersSchema = new Schema({
         type: String,
         trim: true,
         require: true
-    },
-    foto:{
+    },imgUrl: {
         type: String,
-        trim: true,
-        require: true
-    }
+        require: true}
+   
 });
+
 
 module.exports = mongoose.model('Product', customersSchema);
