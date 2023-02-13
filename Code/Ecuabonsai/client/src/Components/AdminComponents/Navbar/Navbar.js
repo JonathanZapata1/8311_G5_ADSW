@@ -23,18 +23,18 @@ export function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link text-black" href="/create">
+                <a className="nav-link text-black" href={`/create?username=${user || ""}`}>
                   Crear
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-black" href="/update">
+                <a className="nav-link text-black" href={`/update?username=${user || ""}`}>
                   Actualizar promocion
                 </a>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link text-black" href="/delete">
+                <a className="nav-link text-black" href={`/delete?username=${user || ""}`}>
                   Eliminar
                 </a>
               </li>

@@ -20,6 +20,7 @@ export function DeleteForm() {
     _id: "",
     tipo: "",
     descripcion: "",
+    image: ""
   });
   const seleccionarBonsai = (elemento, caso) => {
     setBonsaiSeleccionado(elemento);
@@ -59,6 +60,7 @@ export function DeleteForm() {
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Producto</th>
+              <th scope="col">Imagen</th>
               <th scope="col">Precio</th>
               <th scope="col">Acciones</th>
             </tr>
@@ -68,6 +70,7 @@ export function DeleteForm() {
               <tr>
                 <td>{elemento._id}</td>
                 <td>{elemento.tipo}</td>
+                <td><img className="imagenArbol" src={`http://localhost:5000/${elemento.image}`} alt="arbolimagen"></img></td>
                 <td>${elemento.precio}</td>
                 <td>
                   <button

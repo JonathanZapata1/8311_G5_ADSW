@@ -32,51 +32,41 @@ export function CreateForm() {
 
   const [tipo, setTipo] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const [precio, setPrecio] = useState(0);
+  const [precio, setPrecio] = useState("");
   const [promocion, setPromocion] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  const [image, setImage] = useState("");
 
-  const handleTipoChange = (event) => {
-    setTipo(Array.from(event.target.selectedOptions, (option) => option.value));
-  };
-
-  const handleDescripcionChange = (event) => {
-    setDescripcion(event.target.value);
-  };
-
-  const handlePrecioChange = (event) => {
-    setPrecio(event.target.value);
-  };
-  const handlePromocionChange = (event) => {
-    setPromocion(event.target.value);
-  };
-  const handleImgUrlChange = (event) => {
-    setImgUrl(event.target.value);
-  };
-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     const tipoString = tipo.join(",");
+    const formData = new FormData();
+    formData.append("image", image);
+    formData.append("tipo", tipoString);
+    formData.append("descripcion", descripcion);
+    formData.append("precio", precio);
+    formData.append("promocion", promocion);
     try {
-      const response = await axios.post(`${uri}producto`, {
-        tipo: tipoString,
-        descripcion,
-        precio,
-        promocion,
-        imgUrl
+      const response = await axios.post(`${uri}producto`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       console.log(response.data);
       alert("Se ha registrado su producto correctamente ");
       setTipo("");
       setDescripcion("");
-      setPrecio(0);
-      setPromocion(false);
+      setPrecio("");
+      setPromocion("");
     } catch (error) {
       console.error(error);
     }
   };
+
   return (
     <div className="container blur">
+    <h2>Agregar</h2>
+
       <center>
         <div
           className="card text-white bg-secondary border-primary center"
@@ -100,7 +90,8 @@ export function CreateForm() {
                   required="required"
                   aria-required="true"
                   value={tipo}
-                  onChange={handleTipoChange}
+                  //onChange={(e) => setTipo(e.target.value)}
+                  onChange = {(e) => setTipo(Array.from(e.target.selectedOptions, (option) => option.value))}
                 >
                   {products};
                 </select>
@@ -113,11 +104,10 @@ export function CreateForm() {
                   Subir Imagen
                 </label>
                 <input
-                value={imgUrl}
-                onChange={handleImgUrlChange}
+                onChange={(e) => setImage(e.target.files[0])}
                   type="file"
                   className="form-control"
-                  name="imgUrl"
+                  name="image"
                   access="false"
                   multiple="false"
                   id="file-1661659003480"
@@ -134,7 +124,7 @@ export function CreateForm() {
                 <div className="textDiv">
                   <input
                     value={descripcion}
-                    onChange={handleDescripcionChange}
+                    onChange={(e) => setDescripcion(e.target.value)}
                     className="form-control"
                     type="text"
                   ></input>
@@ -151,7 +141,7 @@ export function CreateForm() {
                 <div className="textDiv">
                   <input
                     value={precio}
-                    onChange={handlePrecioChange}
+                    onChange={(e) => setPrecio(e.target.value)}
                     className="form-control"
                     type="number"
                     name="points"
@@ -171,7 +161,7 @@ export function CreateForm() {
                 </label>
                 <select
                   value={promocion}
-                  onChange={handlePromocionChange}
+                  onChange={(e) => setPromocion(e.target.value)}
                   className="form-control"
                   name="select-1661659027080"
                   id="select-1661659027080"

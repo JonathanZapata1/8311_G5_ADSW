@@ -32,10 +32,10 @@ export function UpdateForm() {
 
   const [modalEditar, setModalEditar] = useState(false);
   const [bonsaiSeleccionado, setBonsaiSeleccionado] = useState({
-    id: "",
+    _id: "",
     tipo: "",
     descripcion: "",
-    foto: "",
+    image: "",
     promocion: "",
   });
 
@@ -93,16 +93,17 @@ export function UpdateForm() {
   return (
     <div className="container blur">
       
-        <h2 className="tittle">Promocion</h2>
+        <h2 className="tittle">Actualizar </h2>
         <br />
         <table className="table">
           <thead>
             <tr>
               <th  scope="col">ID</th>
               <th  scope="col">Producto</th>
-              <th  scope="col">Descripcion</th>
+              <th  scope="col">Imagen</th>
+              <th  scope="col">Descripción</th>
               <th  scope="col">Precio</th>
-              <th scope="col">Promocion</th>
+              <th scope="col">Promoción</th>
               <th  scope="col">Acciones</th>
             </tr>
           </thead>
@@ -111,6 +112,7 @@ export function UpdateForm() {
               <tr>
                 <td>{elemento._id}</td>
                 <td>{elemento.tipo}</td>
+                <td><img className="imagenArbol" src={`http://localhost:5000/${elemento.image}`} alt="arbolimagen"></img></td>
                 <td>{elemento.descripcion}</td>
                 <td>${elemento.precio}</td>
                 <td>{elemento.promocion}</td>

@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -37,9 +38,9 @@ const customersSchema = new Schema({
         type: String,
         trim: true,
         require: true
-    },imgUrl: {
+    },image: {
         type: String,
-        require: true}
+           }
    
 });
 
