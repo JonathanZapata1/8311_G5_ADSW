@@ -5,7 +5,7 @@ import { useContext } from "react";
 import Button from 'react-bootstrap/Button';
 import "./UserForm.css";
 
-const Catalogo = ({ _id, nombre,foto,precio,descripcion,catalogos}) => {
+const Catalogo = ({ _id, nombre,image,precio,descripcion,tipo}) => {
  
   const params = new URLSearchParams(window.location.search);
   const user = params.get("username");
@@ -61,10 +61,11 @@ const Catalogo = ({ _id, nombre,foto,precio,descripcion,catalogos}) => {
      <div className="col">     
         <br></br>
             <div className="card"  style={{width: "18rem"}}>
-                <img className="imgCat" src={foto} alt="imagenes"></img>
+                <img className="imgCat" src={`http://localhost:5000/${image}`}alt="imagenes"></img>
                 <div className="card-body">
-                    <h5 className="card-title" >{nombre}</h5>
-                    <h4>${precio}</h4>
+                    <h5 className="card-title" >{tipo}</h5>
+                    <h6>{descripcion}</h6>
+                    <h5>${precio}</h5>
                   {
                     quantityPerItem === 0 ? (
                       <Button variant="primary" onClick={()=>addCart()}>+Añadir al Carrito</Button> 

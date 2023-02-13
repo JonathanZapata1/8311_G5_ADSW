@@ -95,8 +95,8 @@ export function UpdateForm() {
       
         <h2 className="tittle">Actualizar </h2>
         <br />
-        <table className="table">
-          <thead>
+        <table className="table table-color">
+          <thead >
             <tr>
               <th  scope="col">ID</th>
               <th  scope="col">Producto</th>
