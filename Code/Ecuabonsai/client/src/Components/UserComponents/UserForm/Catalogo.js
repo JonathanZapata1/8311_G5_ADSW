@@ -5,7 +5,7 @@ import { useContext } from "react";
 import Button from 'react-bootstrap/Button';
 import "./UserForm.css";
 
-const Catalogo = ({ _id, nombre,image,precio,descripcion,tipo}) => {
+const Catalogo = ({ _id, promocion,image,precio,descripcion,tipo}) => {
  
   const params = new URLSearchParams(window.location.search);
   const user = params.get("username");
@@ -65,7 +65,8 @@ const Catalogo = ({ _id, nombre,image,precio,descripcion,tipo}) => {
                 <div className="card-body">
                     <h5 className="card-title" >{tipo}</h5>
                     <h6>{descripcion}</h6>
-                    <h5>${precio}</h5>
+                    <h5>${precio} <div className="promocion">{promocion}</div> </h5> 
+                    
                   {
                     quantityPerItem === 0 ? (
                       <Button variant="primary" onClick={()=>addCart()}>+Añadir al Carrito</Button> 

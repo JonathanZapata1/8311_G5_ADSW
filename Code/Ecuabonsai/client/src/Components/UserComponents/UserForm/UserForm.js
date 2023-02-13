@@ -24,7 +24,7 @@ export function UserForm() {
   };
 
   return (
-      <div className="Container">
+      <div className="container">
         <div className="row">
         {catalogos.map((item, index) => {
           return <Catalogo key={index} {...item} />;
