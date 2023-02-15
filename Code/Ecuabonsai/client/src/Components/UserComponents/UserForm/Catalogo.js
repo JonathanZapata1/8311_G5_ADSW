@@ -1,8 +1,8 @@
-
 import React from "react";
 import {CartContext} from '../UserForm/ShoppingCartContext'
 import { useContext } from "react";
 import Button from 'react-bootstrap/Button';
+import Swal from 'sweetalert2';
 import "./UserForm.css";
 
 const Catalogo = ({ _id, promocion,image,precio,descripcion,tipo}) => {
@@ -29,7 +29,16 @@ const Catalogo = ({ _id, promocion,image,precio,descripcion,tipo}) => {
         }
     })
   }else{
-    alert("Inicie Sesión");
+    Swal.fire({
+      color: '#6c757d',
+      background: '#fffbf4',
+      icon:'error',
+      text: 'Inicie sesion para poder añadir un producto al carrito',
+      confirmButtonText: 'Aceptar',
+      confirmButtonColor: '#007bff',
+      position:'center',
+      footer: '<a href="/register/user">Registrese aquí si no tiene una cuenta </a>'
+    })
   }
  };
 

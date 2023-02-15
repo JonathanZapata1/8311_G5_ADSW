@@ -6,9 +6,11 @@ import { Dropdown } from "react-bootstrap";
 import { CartContext } from "./ShoppingCartContext";
 import { Button } from "reactstrap";
 import Modal from "react-bootstrap/Modal";
+import Swal from 'sweetalert2';
 
 export function NavbarUser() {
-  const params = new URLSearchParams(window.location.search);
+
+   const params = new URLSearchParams(window.location.search);
   const user = params.get("username");
 
   const [cart] = useContext(CartContext);
@@ -28,7 +30,16 @@ export function NavbarUser() {
     if(user){
     setShow(true);
   }else{
-    alert("Inice Sesion para acceder al carrito");
+    
+   Swal.fire({
+    color: '#6c757d',
+    background: '#fffbf4',
+    icon: 'error',
+    text: 'Debe iniciar sesión para acceder al carrito',
+    confirmButtonText: 'Aceptar',
+    confirmButtonColor: '#007bff',
+    position:'top'
+  })
   }
   }
 

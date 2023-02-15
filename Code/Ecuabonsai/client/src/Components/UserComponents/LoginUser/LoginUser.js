@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Login.css';
-
+import Swal from 'sweetalert2';
 
 export function LoginUser() {
 
@@ -46,7 +46,12 @@ export function LoginUser() {
         console.log('User login successful');
       }
     } else {
-      alert("Contraseña o usuario incorrecto");
+      Swal.fire({
+        title: 'Error!',
+        text: 'Usuario o contraseña incorrecta',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })
     }
   };
   
