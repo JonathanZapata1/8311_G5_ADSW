@@ -22,7 +22,9 @@ export function UpdateForm() {
       var promos = [];
       let aux = (await axios.get("http://localhost:5000/promotion")).data;
       for (let i = 0; i < aux.length; i++) {
+        
         var promo = aux[i].descuento;
+        if(promo !== 'ninguna')
         promos.push(<option>{promo}</option>);
       }
       setPromos(promos);
