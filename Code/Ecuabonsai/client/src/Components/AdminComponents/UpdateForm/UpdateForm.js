@@ -22,15 +22,19 @@ export function UpdateForm() {
       var promos = [];
       let aux = (await axios.get("http://localhost:5000/promotion")).data;
       for (let i = 0; i < aux.length; i++) {
-        
         var promo = aux[i].descuento;
-        if(promo !== 'ninguna')
-        promos.push(<option>{promo}</option>);
+        if (promo !== 'ninguna') {
+          promos.push(<option>{promo}</option>);
+        } else {
+          promos.push(<option value=""></option>);
+        }
       }
       setPromos(promos);
     }
        getPromos();
   }, []);
+
+ 
 
   const [modalEditar, setModalEditar] = useState(false);
   const [bonsaiSeleccionado, setBonsaiSeleccionado] = useState({
@@ -42,6 +46,7 @@ export function UpdateForm() {
   });
 
   const seleccionarBonsai = (elemento, caso) => {
+      setBonsaiSeleccionado(elemento)
     setBonsaiSeleccionado(elemento);
     setModalEditar(true);
   };
@@ -71,7 +76,7 @@ export function UpdateForm() {
           bonsai.promocion = bonsaiSeleccionado.promocion;
          
         }
-      return;
+      return null;
       }); 
       setCatalogos(catalogos);
       setModalEditar(false);

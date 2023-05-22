@@ -21,7 +21,11 @@ export function CreateForm() {
       let aux = (await axios.get(`${uri}promotion`)).data;
       for (let i = 0; i < aux.length; i++) {
         var promo = aux[i].descuento;
-        promos.push(<option>{promo}</option>);
+        if (promo !== 'ninguna') {
+          promos.push(<option>{promo}</option>);
+        } else {
+          promos.push(<option value=""></option>);
+        }
       }
       setPromos(promos);
     }
@@ -90,7 +94,6 @@ export function CreateForm() {
                   required="required"
                   aria-required="true"
                   value={tipo}
-                  //onChange={(e) => setTipo(e.target.value)}
                   onChange = {(e) => setTipo(Array.from(e.target.selectedOptions, (option) => option.value))}
                 >
                   {products};
@@ -165,6 +168,7 @@ export function CreateForm() {
                   className="form-control"
                   name="select-1661659027080"
                   id="select-1661659027080"
+                
                 >
                   {promos}
                 </select>

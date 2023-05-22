@@ -27,7 +27,7 @@ mongoose.Promise = global.Promise;
 
 require('dotenv').config();
 
-const uri = 'mongodb+srv://admin:admin@wkdproject.w5ily.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://admin:admin@cluster0.uxgwiwo.mongodb.net/Ecuabonsai?retryWrites=true&w=majority';
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
